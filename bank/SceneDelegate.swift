@@ -22,7 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         if ((window? = UIWindow(windowScene: scene)) != nil) {
-            window?.rootViewController = AuthenticationController()
             window?.rootViewController = CustomNavigationController(rootViewController: AuthenticationController())
             window?.makeKeyAndVisible()
         } else {

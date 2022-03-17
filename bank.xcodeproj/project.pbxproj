@@ -21,6 +21,7 @@
 		FB73AFD227E3CED10013B7E2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */; };
 		FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD327E3CF0F0013B7E2 /* Logger.swift */; };
 		FB73AFD627E3CFA20013B7E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB73AFD527E3CFA20013B7E2 /* Localizable.strings */; };
+		FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		FB73AFD327E3CF0F0013B7E2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FB73AFD527E3CFA20013B7E2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */,
 				FB73AFD327E3CF0F0013B7E2 /* Logger.swift */,
 				FB73AFD527E3CFA20013B7E2 /* Localizable.strings */,
+				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
 			);
 			path = bank;
 			sourceTree = "<group>";
@@ -169,6 +172,7 @@
 				FB73AFD227E3CED10013B7E2 /* CustomNavigationController.swift in Sources */,
 				FB73AFCA27E3CDBD0013B7E2 /* Strings.swift in Sources */,
 				FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */,
+				FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */,
 				FB73AFB427E3CB7E0013B7E2 /* AppDelegate.swift in Sources */,
 				FB73AFB627E3CB7E0013B7E2 /* SceneDelegate.swift in Sources */,
 				FB73AFCC27E3CDF30013B7E2 /* UIImageExtension.swift in Sources */,

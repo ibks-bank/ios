@@ -10,7 +10,7 @@ import UIKit
 final class InputField: UIView, UITextFieldDelegate {
 
     private struct UIConstants {
-        static let height = 50.0
+        static let height = 30.0
         static let width = 200.0
         
         static let iconWidth = 20.0
@@ -112,7 +112,7 @@ final class CustomRoundedButton: UIView {
         }
 
         button.layer.cornerRadius = UIConstants.height / 2;
-        button.backgroundColor = UIColor.systemTeal
+        button.backgroundColor = UIColor.AppColors.accentColor
         button.setTitle(title, for: .normal)
         button.tintColor = .white
 

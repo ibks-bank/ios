@@ -22,7 +22,7 @@ class CustomNavigationController: UINavigationController {
     func setupNavigationBar() {
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = .systemTeal
+        navBarAppearance.backgroundColor = UIColor.AppColors.accentColor
         navBarAppearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         UINavigationBar.appearance().tintColor = .white
         UINavigationBar.appearance().standardAppearance = navBarAppearance

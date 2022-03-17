@@ -13,7 +13,7 @@ class AuthenticationController: UIViewController {
         static let spacing = 12.0
     }
     
-    private lazy var usernameInputView = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.username.rawValue.localized)
+    private lazy var mailInputView = InputField(labelImage: UIImage.AuthIcons.envelopeIcon, placeholderText: AuthStrings.email.rawValue.localized)
     private lazy var passwordInputView : InputField = {
         let passwordInput = InputField(labelImage: UIImage.AuthIcons.lockIcon, placeholderText: AuthStrings.password.rawValue.localized)
         passwordInput.textField.isSecureTextEntry = true
@@ -35,7 +35,7 @@ class AuthenticationController: UIViewController {
     }
     
     private func configureInputsStackView() {
-        let stack = UIStackView(arrangedSubviews: [usernameInputView, passwordInputView, singInButton, signUpButton])
+        let stack = UIStackView(arrangedSubviews: [mailInputView, passwordInputView, singInButton, signUpButton])
         stack.axis = .vertical
         stack.spacing = UIConstants.spacing
         view.addSubview(stack)
