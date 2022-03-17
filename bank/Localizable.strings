@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  bank
+
+  Created by Yulia Popova on 17/3/2022.
+  
+*/
+
+"auth.username" = "Enter username";
+"auth.email" = "Enter e-mail";
+"auth.password" = "Enter password";
+"auth.retypePassword" = "Reenter password";
+"auth.signUp" = "Sign Up";
+"auth.signIn" = "Sign In";
+"auth.headerSignIn" = "ИБКС Банк";
+"auth.headerSignUp" = "ИБКС Банк";
+"auth.alreadySignedUp" = "Already have an account? ";
+"auth.notSignedUp" = "Don't you have an account? ";
