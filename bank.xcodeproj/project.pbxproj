@@ -106,28 +106,68 @@
 		FB73AFB227E3CB7E0013B7E2 /* bank */ = {
 			isa = PBXGroup;
 			children = (
-				FB73AFB327E3CB7E0013B7E2 /* AppDelegate.swift */,
-				FB73AFB527E3CB7E0013B7E2 /* SceneDelegate.swift */,
-				FB73AFB727E3CB7E0013B7E2 /* AuthenticationController.swift */,
+				FB73AFE527E42A410013B7E2 /* ViewControllers */,
+				FB73AFE427E42A1C0013B7E2 /* Views */,
+				FB73AFE327E429DD0013B7E2 /* AuthService */,
+				FB73AFE227E4299D0013B7E2 /* Extensions */,
+				FB73AFE127E4297B0013B7E2 /* Application */,
 				FB73AFB927E3CB7E0013B7E2 /* Main.storyboard */,
 				FB73AFBC27E3CB800013B7E2 /* Assets.xcassets */,
 				FB73AFBE27E3CB800013B7E2 /* LaunchScreen.storyboard */,
 				FB73AFC127E3CB800013B7E2 /* Info.plist */,
-				FB73AFC727E3CD730013B7E2 /* CustomUIElementsAuth.swift */,
 				FB73AFC927E3CDBD0013B7E2 /* Strings.swift */,
-				FB73AFCB27E3CDF30013B7E2 /* UIImageExtension.swift */,
-				FB73AFCD27E3CE200013B7E2 /* StringExtension.swift */,
-				FB73AFCF27E3CE510013B7E2 /* UIColorsExtension.swift */,
-				FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */,
-				FB73AFD327E3CF0F0013B7E2 /* Logger.swift */,
 				FB73AFD527E3CFA20013B7E2 /* Localizable.strings */,
-				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
-				FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */,
-				FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */,
-				FB73AFDD27E3EF840013B7E2 /* AuthError.swift */,
-				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
 			);
 			path = bank;
+			sourceTree = "<group>";
+		};
+		FB73AFE127E4297B0013B7E2 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FB73AFB327E3CB7E0013B7E2 /* AppDelegate.swift */,
+				FB73AFB527E3CB7E0013B7E2 /* SceneDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FB73AFE227E4299D0013B7E2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB73AFD327E3CF0F0013B7E2 /* Logger.swift */,
+				FB73AFCF27E3CE510013B7E2 /* UIColorsExtension.swift */,
+				FB73AFCB27E3CDF30013B7E2 /* UIImageExtension.swift */,
+				FB73AFCD27E3CE200013B7E2 /* StringExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB73AFE327E429DD0013B7E2 /* AuthService */ = {
+			isa = PBXGroup;
+			children = (
+				FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */,
+				FB73AFDD27E3EF840013B7E2 /* AuthError.swift */,
+				FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */,
+			);
+			path = AuthService;
+			sourceTree = "<group>";
+		};
+		FB73AFE427E42A1C0013B7E2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */,
+				FB73AFC727E3CD730013B7E2 /* CustomUIElementsAuth.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		FB73AFE527E42A410013B7E2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
+				FB73AFB727E3CB7E0013B7E2 /* AuthenticationController.swift */,
+				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

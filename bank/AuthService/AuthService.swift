@@ -58,7 +58,7 @@ struct AuthService {
 
         let login = SecondLogin(email: email, password: password, code: code)
 
-        AF.request("http://localhost:3011/v1/auth/submit-code",
+        AF.request("http://localhost:3012/v1/auth/submit-code",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
@@ -84,7 +84,7 @@ struct AuthService {
 
         let login = Login(email: email, password: password)
 
-        AF.request("http://localhost:3011/v1/auth/sign-in",
+        AF.request("http://localhost:3012/v1/auth/sign-in",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
@@ -107,11 +107,11 @@ struct AuthService {
             // MARK: - FIX
         
             let registration = Registration(
-                email: "xxxxxxx",
-                password: "xxxxxxxx",
+                email: "arthimchik@gmail.com",
+                password: "newPass1",
                 passport: Passport(
-                    series: "2002",
-                    number: "279890",
+                    series: "2092",
+                    number: "010800",
                     firstName: "hgjj",
                     middleName: "khhkj",
                     lastName: "lkjlkj",
@@ -123,7 +123,7 @@ struct AuthService {
                 )
             )
         
-            AF.request("http://localhost:3011/v1/auth/sign-up",
+            AF.request("http://localhost:3012/v1/auth/sign-up",
                        method: .post,
                        parameters: registration, encoder: JSONParameterEncoder.default).response { result in
                 
