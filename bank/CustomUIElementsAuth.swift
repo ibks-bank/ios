@@ -10,7 +10,7 @@ import UIKit
 final class InputField: UIView, UITextFieldDelegate {
 
     private struct UIConstants {
-        static let height = 30.0
+        static let height = 25.0
         static let width = 200.0
         
         static let iconWidth = 20.0
@@ -20,7 +20,7 @@ final class InputField: UIView, UITextFieldDelegate {
         static let paddingRight = -28.0
         static let paddingBottom = -8.0
         
-        static let space = 8.0
+        static let space = 5.0
         
         static let dividerWidth = 1.0
     }
@@ -93,12 +93,14 @@ final class InputField: UIView, UITextFieldDelegate {
 final class CustomRoundedButton: UIView {
 
     private struct UIConstants {
-        static let height = 50.0
+        static let height = 30.0
         static let width = 200.0
     }
 
     // MARK: - Public Properties
     // MARK: - Private Properties
+    public lazy var button = UIButton(type: .system)
+    
     // MARK: - Initializers
     init(title: String, target: Any? = nil, action: Selector? = nil) {
 
@@ -106,7 +108,6 @@ final class CustomRoundedButton: UIView {
 
         heightAnchor.constraint(equalToConstant: UIConstants.height).isActive = true
 
-        let button = UIButton(type: .system)
         if let target = target, let action = action {
             button.addTarget(target, action: action, for: .touchUpInside)
         }

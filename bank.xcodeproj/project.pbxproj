@@ -23,6 +23,10 @@
 		FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD327E3CF0F0013B7E2 /* Logger.swift */; };
 		FB73AFD627E3CFA20013B7E2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB73AFD527E3CFA20013B7E2 /* Localizable.strings */; };
 		FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */; };
+		FB73AFDA27E3ED3C0013B7E2 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */; };
+		FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */; };
+		FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDD27E3EF840013B7E2 /* AuthError.swift */; };
+		FB73AFE027E3F4210013B7E2 /* TwoFAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +50,10 @@
 		FB73AFD327E3CF0F0013B7E2 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FB73AFD527E3CFA20013B7E2 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
+		FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
+		FB73AFDD27E3EF840013B7E2 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +74,6 @@
 				0D2EE9F3CB331C474E79D96B /* Pods-bank.debug.xcconfig */,
 				751F9157BD2D47B17F3D29C3 /* Pods-bank.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,10 @@
 				FB73AFD327E3CF0F0013B7E2 /* Logger.swift */,
 				FB73AFD527E3CFA20013B7E2 /* Localizable.strings */,
 				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
+				FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */,
+				FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */,
+				FB73AFDD27E3EF840013B7E2 /* AuthError.swift */,
+				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
 			);
 			path = bank;
 			sourceTree = "<group>";
@@ -238,7 +249,10 @@
 				FB73AFB827E3CB7E0013B7E2 /* AuthenticationController.swift in Sources */,
 				FB73AFCE27E3CE200013B7E2 /* StringExtension.swift in Sources */,
 				FB73AFC827E3CD730013B7E2 /* CustomUIElementsAuth.swift in Sources */,
+				FB73AFDA27E3ED3C0013B7E2 /* AuthService.swift in Sources */,
 				FB73AFD227E3CED10013B7E2 /* CustomNavigationController.swift in Sources */,
+				FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */,
+				FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */,
 				FB73AFCA27E3CDBD0013B7E2 /* Strings.swift in Sources */,
 				FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */,
 				FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */,
@@ -246,6 +260,7 @@
 				FB73AFB627E3CB7E0013B7E2 /* SceneDelegate.swift in Sources */,
 				FB73AFCC27E3CDF30013B7E2 /* UIImageExtension.swift in Sources */,
 				FB73AFD027E3CE510013B7E2 /* UIColorsExtension.swift in Sources */,
+				FB73AFE027E3F4210013B7E2 /* TwoFAController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

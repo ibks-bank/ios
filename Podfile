@@ -7,5 +7,6 @@ target 'bank' do
 
   # Pods for bank
   pod 'PopupDialog', '~> 1.1'
+  pod 'Alamofire', '~> 5.5'
 
 end

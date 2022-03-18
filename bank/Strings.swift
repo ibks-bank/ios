@@ -32,4 +32,8 @@ enum AuthStrings: String {
     case headerSignIn = "auth.headerSignIn"
     case headerSignUp = "auth.headerSignUp"
     
+    case signInUnsuccessful = "auth.signInUnuccellful"
+    case signUpUnuccessful = "auth.signUpUnuccellful"
+    case accept = "auth.accept"
+    
 }

@@ -6,12 +6,12 @@
 //
 
 import UIKit
+import PopupDialog
 
 class RegistrationController: UIViewController {
 
     private struct UIConstants {
         static let spacing = 10.0
-        static let paddingTop = 100.0
     }
 
     // MARK: - Public Property
@@ -47,7 +47,12 @@ class RegistrationController: UIViewController {
     private lazy var date = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.date.rawValue.localized)
     
     
-    private lazy var registerButton = CustomRoundedButton(title: AuthStrings.signUp.rawValue.localized)
+    private lazy var registerButton : CustomRoundedButton = {
+        let button = CustomRoundedButton(title: AuthStrings.signUp.rawValue.localized)
+        button.button.addTarget(self, action: #selector(signUp), for: .touchUpInside)
+        return button
+    }()
+    
     private lazy var signInButton = AttributedCustomButton(firstPart: AuthStrings.alreadySignedUp.rawValue.localized, secondPart: AuthStrings.signIn.rawValue.localized)
 
     // MARK: - Public Methods
@@ -60,6 +65,32 @@ class RegistrationController: UIViewController {
         view.backgroundColor = .white
         configureInputsStackView()
     }
+    
+    @objc func signUp() {
+        guard let email = envelopeInputView.textField.text else {return}
+                guard let password = passwordInputView.textField.text else {return}
+        AuthService.shared.signUp(email: email, password: password) { (result) in
+            switch result {
+            case .success:
+                let controller = TwoFAController()
+                self.navigationController?.pushViewController(controller, animated: true)
+
+            case .failure(let error):
+
+                let title = AuthStrings.signInUnsuccessful.rawValue.localized
+                let message = error.localizedDescription
+
+                lazy var popup : PopupDialog = {
+                   let pop = PopupDialog(title: title, message: message)
+                    let button = CancelButton(title: AuthStrings.accept.rawValue.localized) {}
+                    pop.addButton(button)
+                    return pop
+                }()
+
+                self.present(popup, animated: true, completion: nil)
+            }
+        }
+    }
 
     // MARK: - Private Methods
     private func configureInputsStackView() {
@@ -68,7 +99,7 @@ class RegistrationController: UIViewController {
         stack.spacing = UIConstants.spacing
         view.addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false
-        stack.topAnchor.constraint(equalTo: view.topAnchor, constant: UIConstants.paddingTop + UIConstants.spacing).isActive = true
+        stack.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: UIConstants.spacing).isActive = true
         stack.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         stack.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
     }
