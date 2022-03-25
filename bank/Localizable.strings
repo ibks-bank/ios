@@ -24,3 +24,9 @@
 "auth.address" = "Home address";
 "auth.place" = "Birthday place";
 "auth.date" = "Birthday date";
+"auth.signInUnuccellful" = "Error! Unable to sign in";
+"auth.signUpUnuccellful" = "Error! Unable to sign up";
+"auth.accept" = "Accept";
+"auth.submit" = "Submit";
+"auth.enterCode" = "Enter code";
+

@@ -27,6 +27,7 @@
 		FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */; };
 		FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDD27E3EF840013B7E2 /* AuthError.swift */; };
 		FB73AFE027E3F4210013B7E2 /* TwoFAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */; };
+		FBACAF6127ED8CAA0048A95E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACAF6027ED8CAA0048A95E /* MainController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		FB73AFDD27E3EF840013B7E2 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAController.swift; sourceTree = "<group>"; };
+		FBACAF6027ED8CAA0048A95E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
 				FB73AFB727E3CB7E0013B7E2 /* AuthenticationController.swift */,
 				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
+				FBACAF6027ED8CAA0048A95E /* MainController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */,
 				FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */,
 				FB73AFCA27E3CDBD0013B7E2 /* Strings.swift in Sources */,
+				FBACAF6127ED8CAA0048A95E /* MainController.swift in Sources */,
 				FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */,
 				FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */,
 				FB73AFB427E3CB7E0013B7E2 /* AppDelegate.swift in Sources */,
@@ -446,11 +450,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z33ZD2X6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bank/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IBKS Bank";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -463,6 +469,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bip2022.bank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -475,11 +482,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = Z33ZD2X6PY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = bank/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "IBKS Bank";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -492,6 +501,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = bip2022.bank;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

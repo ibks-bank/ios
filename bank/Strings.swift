@@ -28,12 +28,16 @@ enum AuthStrings: String {
     case alreadySignedUp = "auth.alreadySignedUp"
     case notSignedUp = "auth.notSignedUp"
     
-    // screen headers
     case headerSignIn = "auth.headerSignIn"
     case headerSignUp = "auth.headerSignUp"
     
     case signInUnsuccessful = "auth.signInUnuccellful"
     case signUpUnuccessful = "auth.signUpUnuccellful"
     case accept = "auth.accept"
+    
+    case submit = "auth.submit"
+    
+    case enterCode = "auth.enterCode"
+
     
 }

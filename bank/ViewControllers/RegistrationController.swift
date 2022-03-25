@@ -34,18 +34,18 @@ class RegistrationController: UIViewController {
     
     private lazy var pasportNumber = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.pasportNumber.rawValue.localized)
     
-    private lazy var fullName = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.fullName.rawValue.localized)
-    
-    private lazy var issuedBy = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.issuedBy.rawValue.localized)
-    
-    private lazy var issuedAt = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.issuedAt.rawValue.localized)
-    
-    private lazy var address = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.address.rawValue.localized)
-    
-    private lazy var place = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.place.rawValue.localized)
-    
-    private lazy var date = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.date.rawValue.localized)
-    
+//    private lazy var fullName = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.fullName.rawValue.localized)
+//
+//    private lazy var issuedBy = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.issuedBy.rawValue.localized)
+//
+//    private lazy var issuedAt = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.issuedAt.rawValue.localized)
+//
+//    private lazy var address = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.address.rawValue.localized)
+//
+//    private lazy var place = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.place.rawValue.localized)
+//
+//    private lazy var date = InputField(labelImage: UIImage.AuthIcons.personIcon, placeholderText: AuthStrings.date.rawValue.localized)
+//
     
     private lazy var registerButton : CustomRoundedButton = {
         let button = CustomRoundedButton(title: AuthStrings.signUp.rawValue.localized)
@@ -67,9 +67,13 @@ class RegistrationController: UIViewController {
     }
     
     @objc func signUp() {
+        
         guard let email = envelopeInputView.textField.text else {return}
-                guard let password = passwordInputView.textField.text else {return}
-        AuthService.shared.signUp(email: email, password: password) { (result) in
+        guard let password = passwordInputView.textField.text else {return}
+        guard let series = pasportSeries.textField.text else {return}
+        guard let number = pasportNumber.textField.text else {return}
+        
+        AuthService.shared.signUp(email: email, password: password, series: series, number: number) { (result) in
             switch result {
             case .success:
                 let controller = TwoFAController()
@@ -94,7 +98,7 @@ class RegistrationController: UIViewController {
 
     // MARK: - Private Methods
     private func configureInputsStackView() {
-        let stack = UIStackView(arrangedSubviews: [envelopeInputView, passwordInputView, retypePasswordInputView, pasportSeries, pasportNumber, fullName, issuedAt, issuedBy, address, place, date, registerButton, signInButton])
+        let stack = UIStackView(arrangedSubviews: [envelopeInputView, passwordInputView, retypePasswordInputView, pasportSeries, pasportNumber, /* fullName, issuedAt, issuedBy, address, place, date, */ registerButton, signInButton])
         stack.axis = .vertical
         stack.spacing = UIConstants.spacing
         view.addSubview(stack)

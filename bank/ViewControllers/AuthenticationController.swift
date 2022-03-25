@@ -52,21 +52,23 @@ class AuthenticationController: UIViewController {
                 guard let password = passwordInputView.textField.text else {return}
         AuthService.shared.signIn(email: email, password: password) { (result) in
             switch result {
-            case .success:
-                let controller = TwoFAController()
-                self.navigationController?.pushViewController(controller, animated: true)
+                case .success:
+                    let controller = TwoFAController()
+                    controller.mail = email
+                    controller.password = password
+                    self.navigationController?.pushViewController(controller, animated: true)
 
-            case .failure(let error):
+                case .failure(let error):
 
-                let title = AuthStrings.signInUnsuccessful.rawValue.localized
-                let message = error.localizedDescription
+                    let title = AuthStrings.signInUnsuccessful.rawValue.localized
+                    let message = error.localizedDescription
 
-                lazy var popup : PopupDialog = {
-                   let pop = PopupDialog(title: title, message: message)
-                    let button = CancelButton(title: AuthStrings.accept.rawValue.localized) {}
-                    pop.addButton(button)
-                    return pop
-                }()
+                    lazy var popup : PopupDialog = {
+                       let pop = PopupDialog(title: title, message: message)
+                        let button = CancelButton(title: AuthStrings.accept.rawValue.localized) {}
+                        pop.addButton(button)
+                        return pop
+                    }()
 
                 self.present(popup, animated: true, completion: nil)
             }

@@ -77,7 +77,6 @@ final class InputField: UIView, UITextFieldDelegate {
         textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: UIConstants.paddingBottom).isActive = true
     }
 
-
     private func addDivider() {
         addSubview(dividerView)
         dividerView.backgroundColor = UIColor.AppColors.accentColor

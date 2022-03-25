@@ -50,6 +50,24 @@ struct AuthService {
         let passport: Passport
     }
 
+    func getData(completion: @escaping (AuthResult) -> Void) {
+
+        AF.request("http://192.168.210.128:3011/v1/passport",
+                   method: .get).response { result in
+            debugPrint(result)
+
+            if result.response?.statusCode == 200 {
+                print("Success")
+                completion(.success)
+            } else {
+                print(result.response?.statusCode ?? 0)
+                completion(.failure(AuthError.unknownError))
+            }
+        }
+
+        completion(.success)
+    }
+    
     func enterCode(email: String?, password: String?, code: String?, completion: @escaping (AuthResult) -> Void) {
         guard let email = email, let password = password, let code = code else {
             completion(.failure(AuthError.unknownError))
@@ -58,7 +76,7 @@ struct AuthService {
 
         let login = SecondLogin(email: email, password: password, code: code)
 
-        AF.request("http://localhost:3012/v1/auth/submit-code",
+        AF.request("http://192.168.210.128:3011/v1/auth/submit-code",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
@@ -84,34 +102,38 @@ struct AuthService {
 
         let login = Login(email: email, password: password)
 
-        AF.request("http://localhost:3012/v1/auth/sign-in",
+        AF.request("http://192.168.210.128:3011/v1/auth/sign-in",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
             debugPrint(result)
+            print(result)
+            print(result.response?.headers.dictionary["Content-Length"] ?? 0)
 
             if result.response?.statusCode == 200 {
-                print("Success")
-                completion(.success)
+                if ((result.response?.headers.dictionary["Content-Length"] ?? "0") == "2") {
+                    completion(.success)
+                } else {
+                    completion(.failure(AuthError.unknownError))
+                }
+                
             } else {
                 print(result.response?.statusCode ?? 0)
                 completion(.failure(AuthError.unknownError))
             }
         }
-
-        completion(.success)
     }
 
-    public func signUp(email: String?, password: String?, completion: @escaping (AuthResult) -> Void) {
+    public func signUp(email: String?, password: String?, series: String?, number: String?, completion: @escaping (AuthResult) -> Void) {
 
             // MARK: - FIX
         
             let registration = Registration(
-                email: "arthimchik@gmail.com",
-                password: "newPass1",
+                email: email ?? "",
+                password: password ?? "",
                 passport: Passport(
-                    series: "2092",
-                    number: "010800",
+                    series: series ?? "",
+                    number: number ?? "",
                     firstName: "hgjj",
                     middleName: "khhkj",
                     lastName: "lkjlkj",
@@ -123,7 +145,7 @@ struct AuthService {
                 )
             )
         
-            AF.request("http://localhost:3012/v1/auth/sign-up",
+            AF.request("http://192.168.210.128:3011/v1/auth/sign-up",
                        method: .post,
                        parameters: registration, encoder: JSONParameterEncoder.default).response { result in
                 
@@ -140,8 +162,6 @@ struct AuthService {
                 }
             }
             return
-//        }
     }
-    
     
 }
