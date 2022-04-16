@@ -52,7 +52,7 @@ struct AuthService {
 
     func getData(completion: @escaping (AuthResult) -> Void) {
 
-        AF.request("http://192.168.210.128:3011/v1/passport",
+        AF.request("http://bank.sytes.net:3011/v1/passport",
                    method: .get).response { result in
             debugPrint(result)
 
@@ -76,7 +76,9 @@ struct AuthService {
 
         let login = SecondLogin(email: email, password: password, code: code)
 
-        AF.request("http://192.168.210.128:3011/v1/auth/submit-code",
+        
+
+        AF.request("http://bank.sytes.net:3011/v1/auth/submit-code",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
@@ -102,7 +104,7 @@ struct AuthService {
 
         let login = Login(email: email, password: password)
 
-        AF.request("http://192.168.210.128:3011/v1/auth/sign-in",
+        AF.request("http://bank.sytes.net:3011/v1/auth/sign-in",
                    method: .post,
                    parameters: login,
                    encoder: JSONParameterEncoder.default).response { result in
@@ -145,7 +147,7 @@ struct AuthService {
                 )
             )
         
-            AF.request("http://192.168.210.128:3011/v1/auth/sign-up",
+            AF.request("http://bank.sytes.net:3011/v1/auth/sign-up",
                        method: .post,
                        parameters: registration, encoder: JSONParameterEncoder.default).response { result in
                 
