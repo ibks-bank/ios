@@ -16,12 +16,19 @@ class AuthenticationController: UIViewController {
         static let blurRadius = 10.0
     }
     
-    private lazy var mailInputView = InputField(labelImage: UIImage.AuthIcons.envelopeIcon, placeholderText: AuthStrings.email.rawValue.localized)
+    private lazy var mailInputView : InputField = {
+        let inputField = InputField(labelImage: UIImage.AuthIcons.envelopeIcon, placeholderText: AuthStrings.email.rawValue.localized)
+        inputField.textField.addTarget(self, action: #selector(ToLowercase), for: UIControl.Event.editingChanged)
+        inputField.textField.keyboardType = .emailAddress
+        return inputField
+    }()
+    
     private lazy var passwordInputView : InputField = {
         let passwordInput = InputField(labelImage: UIImage.AuthIcons.lockIcon, placeholderText: AuthStrings.password.rawValue.localized)
         passwordInput.textField.isSecureTextEntry = true
         return passwordInput
     }()
+    
     private lazy var signInButton : CustomRoundedButton = {
         let button = CustomRoundedButton(title: AuthStrings.signIn.rawValue.localized)
         button.button.addTarget(self, action: #selector(signIn), for: .touchUpInside)
@@ -45,6 +52,10 @@ class AuthenticationController: UIViewController {
     @objc func SignUp(){
             let controller = RegistrationController()
             navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func ToLowercase() {
+        mailInputView.textField.text = mailInputView.textField.text?.lowercased()
     }
 
     @objc func signIn() {
