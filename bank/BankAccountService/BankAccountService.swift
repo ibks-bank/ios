@@ -19,6 +19,7 @@ struct BankAccountService {
     }
     
     struct Transaction: Encodable {
+        let accountID: String
         let payee: String
         let amount: String
     }
@@ -38,9 +39,7 @@ struct BankAccountService {
     ]
     
     func getTransactions(start : String, end : String, completion: @escaping (AuthResult) -> Void) {
-              
-        let transactionParameters = Transations(start: start, end: end)
-        
+                      
         AF.request(
             "http://bank.sytes.net:3001/v1/transactions",
             method: .get,
@@ -85,9 +84,51 @@ struct BankAccountService {
         completion(.success)
     }
     
-    func createTransaction(payee: String, amount: String, completion: @escaping (AuthResult) -> Void) {
+    func getBankAccount(accountID: String, completion: @escaping (AuthResult) -> Void) {
+                      
+        AF.request(
+            "http://bank.sytes.net:3001/v1/accounts/" + accountID,
+            method: .get,
+            headers: headers
+        ).response { result in
+            debugPrint(result)
 
-        let transaction = Transaction(payee: payee, amount: amount)
+            if result.response?.statusCode == 200 {
+                print("Success")
+                completion(.success)
+            } else {
+                print(result.response?.statusCode ?? 0)
+                completion(.failure(AuthError.unknownError))
+            }
+        }
+
+        completion(.success)
+    }
+    
+    func getBankAccounts(completion: @escaping (AuthResult) -> Void) {
+                      
+        AF.request(
+            "http://bank.sytes.net:3001/v1/accounts",
+            method: .get,
+            headers: headers
+        ).response { result in
+            debugPrint(result)
+
+            if result.response?.statusCode == 200 {
+                print("Success")
+                completion(.success)
+            } else {
+                print(result.response?.statusCode ?? 0)
+                completion(.failure(AuthError.unknownError))
+            }
+        }
+
+        completion(.success)
+    }
+    
+    func createTransaction(accountID: String, payee: String, amount: String, completion: @escaping (AuthResult) -> Void) {
+
+        let transaction = Transaction(accountID: accountID, payee: payee, amount: amount)
                 
         AF.request(
             "http://bank.sytes.net:3001/v1/transactions/create",
@@ -109,4 +150,5 @@ struct BankAccountService {
 
         completion(.success)
     }
+
 }
