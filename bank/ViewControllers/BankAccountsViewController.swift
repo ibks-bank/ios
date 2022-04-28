@@ -25,7 +25,6 @@ class BankAccountsViewController: UIViewController {
     
     private lazy var tableView: UITableView = {
         let table = UITableView()
-//        table.backgroundColor = UIColor.AppColors.accentColor
         table.dataSource = self
         table.delegate = self
         table.translatesAutoresizingMaskIntoConstraints = false
@@ -34,9 +33,7 @@ class BankAccountsViewController: UIViewController {
     }()
     
     var accounts : [BankAccountService.BankAccountResponse] = []
-    
-    var areHeroesLoaded = false
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,18 +54,18 @@ class BankAccountsViewController: UIViewController {
 //        service.getBankAccount(accountID: "1") { result in
 //            debugPrint(result)
 //        }
-        
-        service.createBankAccount(currency: "CURRENCY_EURO", limit: "1000", name: "string", completion: { result in
-            debugPrint(result)
-        })
-        
-        service.createBankAccount(currency: "CURRENCY_EURO", limit: "1000", name: "string", completion: { result in
-            debugPrint(result)
-        })
-        
-        service.createBankAccount(currency: "CURRENCY_DOLLAR_US", limit: "3000", name: "string", completion: { result in
-            debugPrint(result)
-        })
+//
+//        service.createBankAccount(currency: "CURRENCY_EURO", limit: "1000", name: "string", completion: { result in
+//            debugPrint(result)
+//        })
+//
+//        service.createBankAccount(currency: "CURRENCY_EURO", limit: "1000", name: "string", completion: { result in
+//            debugPrint(result)
+//        })
+//
+//        service.createBankAccount(currency: "CURRENCY_DOLLAR_US", limit: "3000", name: "string", completion: { result in
+//            debugPrint(result)
+//        })
         
     }
 
@@ -133,7 +130,6 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
         cell.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.02)
         
         var view = UIView()
-        view.backgroundColor = UIColor.white
         view.layer.cornerRadius = 30.0
 
         cell.addSubview(view)
@@ -152,7 +148,7 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
         
         if indexPath.row != 0 {
             
-            view.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.9)
+            view.backgroundColor = UIColor.systemGray6
             
             var iv = UIImageView()
             
@@ -163,7 +159,7 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
             let currency = self.accounts[indexPath.row - 1].currency
             
             iv.image = getCurrencyImage(currency: currency)
-            iv.tintColor = UIColor.black
+            iv.tintColor = UIColor.systemBlue
             
             
             cell.addSubview(iv)
@@ -176,7 +172,7 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
             let bankAccountLabel = UILabel()
             
             bankAccountLabel.text = "IBKS Bank Account #" + self.accounts[indexPath.row - 1].id + " " + getCurrencyCode(currency: currency)
-            bankAccountLabel.textColor = UIColor.black
+            bankAccountLabel.textColor = UIColor.systemGray2
             bankAccountLabel.font = UIFont.systemFont(ofSize: 14.0)
             
             cell.addSubview(bankAccountLabel)
@@ -188,7 +184,7 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
             let limitLabel = UILabel()
             
             limitLabel.text = self.accounts[indexPath.row - 1].limit + " " + getCurrencySymbol(currency: currency)
-            limitLabel.font = UIFont.boldSystemFont(ofSize: 14.0)
+            limitLabel.font = UIFont.boldSystemFont(ofSize: 18.0)
             
             cell.addSubview(limitLabel)
             
@@ -200,11 +196,11 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
 
         } else {
             
-            view.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.08)
+            view.backgroundColor = UIColor.systemGray6
             
             var label = UILabel()
             label.text = "Открыть новый счет"
-            label.textColor = UIColor.black
+            label.textColor = UIColor.systemBlue
             label.font = UIFont.boldSystemFont(ofSize: 18.0)
             cell.addSubview(label)
             

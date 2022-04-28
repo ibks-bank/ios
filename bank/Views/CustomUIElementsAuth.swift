@@ -69,7 +69,7 @@ final class InputField: UIView, UITextFieldDelegate {
         addSubview(textField)
         textField.autocorrectionType = .no
         textField.placeholder = placeholderText
-        textField.textColor = .black
+        textField.textColor = UIColor.systemGray2
         textField.translatesAutoresizingMaskIntoConstraints = false
 
         textField.leftAnchor.constraint(equalTo: icon.rightAnchor, constant: UIConstants.space).isActive = true
@@ -146,7 +146,7 @@ final class AttributedCustomButton: UIButton {
             string: firstPart,
             attributes: [
                 NSAttributedString.Key.font: UIFont.systemFont(ofSize: UIConstants.fontSize),
-                NSAttributedString.Key.foregroundColor: UIColor.black
+                NSAttributedString.Key.foregroundColor: UIColor.systemGray2
             ]
         )
         attributedTitle.append(NSAttributedString(

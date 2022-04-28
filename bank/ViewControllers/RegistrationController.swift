@@ -60,9 +60,9 @@ class RegistrationController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.hidesBarsOnSwipe = true
-        view.backgroundColor = .white
+        view.backgroundColor = .systemGray6
         navigationItem.title = AuthStrings.headerSignUp.rawValue.localized
-        view.backgroundColor = .white
+        navigationItem.leftBarButtonItem = nil
         configureInputsStackView()
     }
     

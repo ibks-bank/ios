@@ -118,18 +118,17 @@ struct BankAccountService {
             method: .get,
             headers: headers
         ).response { result in
-            print(result.data!)
-      
-            do {
-                let response = try JSONDecoder().decode(BankAccountsResponse.self, from: result.data!)
-                completion(response.accounts)
-            
-            } catch let error as NSError {
-                print("Failed to load: \(error.localizedDescription)")
-            }
                         
             if result.response?.statusCode == 200 {
-                print("Success")
+                
+                do {
+                    let response = try JSONDecoder().decode(BankAccountsResponse.self, from: result.data!)
+                    completion(response.accounts)
+                
+                } catch let error as NSError {
+                    print("Failed to load: \(error.localizedDescription)")
+                }
+                
                 completion([])
             } else {
                 print(result.response?.statusCode ?? 0)

@@ -13,13 +13,13 @@ final class TabBarController: UITabBarController {
 
         let tabBarAppearance = UITabBarAppearance()
         tabBarAppearance.configureWithOpaqueBackground()
-        tabBarAppearance.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
+        tabBarAppearance.backgroundColor = UIColor.systemGray6
         tabBar.standardAppearance = tabBarAppearance
         tabBar.scrollEdgeAppearance = tabBarAppearance
 
         let navBarAppearance = UINavigationBarAppearance()
         navBarAppearance.configureWithOpaqueBackground()
-        navBarAppearance.backgroundColor = UIColor(red: 0.97, green: 0.97, blue: 0.97, alpha: 1)
+        navBarAppearance.backgroundColor = UIColor.systemGray6
 
         let nav1 = UINavigationController(rootViewController: ProfileViewController())
         let nav2 = UINavigationController(rootViewController: BankAccountsViewController())
