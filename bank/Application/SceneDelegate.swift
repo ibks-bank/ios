@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         if ((window? = UIWindow(windowScene: scene)) != nil) {
-            window?.rootViewController = CustomNavigationController(rootViewController: MainController())
+            window?.rootViewController = TabBarController()
             window?.makeKeyAndVisible()
         } else {
             Logger.log("Invalid window")

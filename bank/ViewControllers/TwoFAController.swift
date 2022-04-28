@@ -47,7 +47,7 @@ class TwoFAController: UIViewController {
         AuthService.shared.enterCode(email: mail, password: password, code: code) { (result) in
             switch result {
             case .success:
-                let controller = MainController()
+                let controller = TabBarController()
                 self.navigationController?.pushViewController(controller, animated: true)
 
             case .failure(let error):

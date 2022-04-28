@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MainController: UIViewController {
+class BankAccountsViewController: UIViewController {
     
     var service = BankAccountService.shared
     
@@ -115,7 +115,7 @@ class MainController: UIViewController {
     }
 }
 
-extension MainController: UITableViewDataSource, UITableViewDelegate {
+extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return accounts.count + 1

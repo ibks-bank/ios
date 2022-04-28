@@ -97,7 +97,7 @@ class LocalAuthenticationController: UIViewController {
                 if success {
                     DispatchQueue.main.async {
                         
-                        var controller = MainController()
+                        var controller = TabBarController()
                         
                         self.navigationController?.pushViewController(controller, animated: true)
                         self.dismiss(animated: true, completion: nil)
