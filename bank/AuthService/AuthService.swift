@@ -49,13 +49,22 @@ struct AuthService {
         let password: String
         let passport: Passport
     }
+    
+    struct Token: Decodable {
+        let token: String
+    }
+    
+    let headers: HTTPHeaders = [
+        "X-Auth-Token": UserDefaults.standard.string(forKey: "token") ?? "",
+        "Accept": "application/json"
+    ]
 
     func getData(completion: @escaping (AuthResult) -> Void) {
 
         AF.request("http://bank.sytes.net:3011/v1/passport",
-                   method: .get).response { result in
-            debugPrint(result)
-
+                   method: .get,
+                   headers: headers
+        ).response { result in
             if result.response?.statusCode == 200 {
                 print("Success")
                 completion(.success)
@@ -81,11 +90,13 @@ struct AuthService {
         AF.request("http://bank.sytes.net:3011/v1/auth/submit-code",
                    method: .post,
                    parameters: login,
-                   encoder: JSONParameterEncoder.default).response { result in
+                   encoder: JSONParameterEncoder.default).responseDecodable(of: Token.self) { result in
             debugPrint(result)
-
+            
             if result.response?.statusCode == 200 {
                 print("Success")
+                let token = result.value!.token
+                UserDefaults.standard.set(token, forKey: "token")
                 completion(.success)
             } else {
                 print(result.response?.statusCode ?? 0)

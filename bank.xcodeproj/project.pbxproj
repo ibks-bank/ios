@@ -27,6 +27,11 @@
 		FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */; };
 		FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDD27E3EF840013B7E2 /* AuthError.swift */; };
 		FB73AFE027E3F4210013B7E2 /* TwoFAController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */; };
+		FB878EA0281B1F2F00B907C1 /* BankAccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878E9F281B1F2F00B907C1 /* BankAccountService.swift */; };
+		FB878EA2281B225300B907C1 /* LocalAuthenticationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA1281B225300B907C1 /* LocalAuthenticationController.swift */; };
+		FB878EA6281B231100B907C1 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA3281B231100B907C1 /* NumberButton.swift */; };
+		FB878EA7281B231100B907C1 /* PincodeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA4281B231100B907C1 /* PincodeCircle.swift */; };
+		FB878EA8281B231100B907C1 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA5281B231100B907C1 /* BankAccountCell.swift */; };
 		FBACAF6127ED8CAA0048A95E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACAF6027ED8CAA0048A95E /* MainController.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +60,11 @@
 		FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResult.swift; sourceTree = "<group>"; };
 		FB73AFDD27E3EF840013B7E2 /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
 		FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFAController.swift; sourceTree = "<group>"; };
+		FB878E9F281B1F2F00B907C1 /* BankAccountService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BankAccountService.swift; path = bank/BankAccountService/BankAccountService.swift; sourceTree = SOURCE_ROOT; };
+		FB878EA1281B225300B907C1 /* LocalAuthenticationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalAuthenticationController.swift; sourceTree = "<group>"; };
+		FB878EA3281B231100B907C1 /* NumberButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
+		FB878EA4281B231100B907C1 /* PincodeCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PincodeCircle.swift; sourceTree = "<group>"; };
+		FB878EA5281B231100B907C1 /* BankAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
 		FBACAF6027ED8CAA0048A95E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -146,6 +156,7 @@
 		FB73AFE327E429DD0013B7E2 /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
+				FB878E9F281B1F2F00B907C1 /* BankAccountService.swift */,
 				FB73AFD927E3ED3C0013B7E2 /* AuthService.swift */,
 				FB73AFDD27E3EF840013B7E2 /* AuthError.swift */,
 				FB73AFDB27E3ED7C0013B7E2 /* AuthResult.swift */,
@@ -156,6 +167,9 @@
 		FB73AFE427E42A1C0013B7E2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FB878EA5281B231100B907C1 /* BankAccountCell.swift */,
+				FB878EA3281B231100B907C1 /* NumberButton.swift */,
+				FB878EA4281B231100B907C1 /* PincodeCircle.swift */,
 				FB73AFD127E3CED10013B7E2 /* CustomNavigationController.swift */,
 				FB73AFC727E3CD730013B7E2 /* CustomUIElementsAuth.swift */,
 			);
@@ -165,6 +179,7 @@
 		FB73AFE527E42A410013B7E2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				FB878EA1281B225300B907C1 /* LocalAuthenticationController.swift */,
 				FB73AFD727E3D8920013B7E2 /* RegistrationController.swift */,
 				FB73AFB727E3CB7E0013B7E2 /* AuthenticationController.swift */,
 				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
@@ -291,15 +306,20 @@
 			files = (
 				FB73AFB827E3CB7E0013B7E2 /* AuthenticationController.swift in Sources */,
 				FB73AFCE27E3CE200013B7E2 /* StringExtension.swift in Sources */,
+				FB878EA7281B231100B907C1 /* PincodeCircle.swift in Sources */,
 				FB73AFC827E3CD730013B7E2 /* CustomUIElementsAuth.swift in Sources */,
 				FB73AFDA27E3ED3C0013B7E2 /* AuthService.swift in Sources */,
 				FB73AFD227E3CED10013B7E2 /* CustomNavigationController.swift in Sources */,
+				FB878EA2281B225300B907C1 /* LocalAuthenticationController.swift in Sources */,
 				FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */,
 				FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */,
+				FB878EA8281B231100B907C1 /* BankAccountCell.swift in Sources */,
 				FB73AFCA27E3CDBD0013B7E2 /* Strings.swift in Sources */,
 				FBACAF6127ED8CAA0048A95E /* MainController.swift in Sources */,
 				FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */,
+				FB878EA6281B231100B907C1 /* NumberButton.swift in Sources */,
 				FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */,
+				FB878EA0281B1F2F00B907C1 /* BankAccountService.swift in Sources */,
 				FB73AFB427E3CB7E0013B7E2 /* AppDelegate.swift in Sources */,
 				FB73AFB627E3CB7E0013B7E2 /* SceneDelegate.swift in Sources */,
 				FB73AFCC27E3CDF30013B7E2 /* UIImageExtension.swift in Sources */,

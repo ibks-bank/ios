@@ -34,7 +34,7 @@ struct BankAccountService {
     }
     
     let headers: HTTPHeaders = [
-        "X-Auth-Token": token,
+        "X-Auth-Token": UserDefaults.standard.string(forKey: "token") ?? "",
         "Accept": "application/json"
     ]
     
