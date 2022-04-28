@@ -32,6 +32,7 @@
 		FB878EA6281B231100B907C1 /* NumberButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA3281B231100B907C1 /* NumberButton.swift */; };
 		FB878EA7281B231100B907C1 /* PincodeCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA4281B231100B907C1 /* PincodeCircle.swift */; };
 		FB878EA8281B231100B907C1 /* BankAccountCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA5281B231100B907C1 /* BankAccountCell.swift */; };
+		FB878EAA281B297000B907C1 /* NewBankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EA9281B297000B907C1 /* NewBankAccountViewController.swift */; };
 		FBACAF6127ED8CAA0048A95E /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACAF6027ED8CAA0048A95E /* MainController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		FB878EA3281B231100B907C1 /* NumberButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberButton.swift; sourceTree = "<group>"; };
 		FB878EA4281B231100B907C1 /* PincodeCircle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PincodeCircle.swift; sourceTree = "<group>"; };
 		FB878EA5281B231100B907C1 /* BankAccountCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BankAccountCell.swift; sourceTree = "<group>"; };
+		FB878EA9281B297000B907C1 /* NewBankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewBankAccountViewController.swift; sourceTree = "<group>"; };
 		FBACAF6027ED8CAA0048A95E /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -184,6 +186,7 @@
 				FB73AFB727E3CB7E0013B7E2 /* AuthenticationController.swift */,
 				FB73AFDF27E3F4210013B7E2 /* TwoFAController.swift */,
 				FBACAF6027ED8CAA0048A95E /* MainController.swift */,
+				FB878EA9281B297000B907C1 /* NewBankAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				FB73AFDA27E3ED3C0013B7E2 /* AuthService.swift in Sources */,
 				FB73AFD227E3CED10013B7E2 /* CustomNavigationController.swift in Sources */,
 				FB878EA2281B225300B907C1 /* LocalAuthenticationController.swift in Sources */,
+				FB878EAA281B297000B907C1 /* NewBankAccountViewController.swift in Sources */,
 				FB73AFDC27E3ED7C0013B7E2 /* AuthResult.swift in Sources */,
 				FB73AFDE27E3EF840013B7E2 /* AuthError.swift in Sources */,
 				FB878EA8281B231100B907C1 /* BankAccountCell.swift in Sources */,

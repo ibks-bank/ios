@@ -1,10 +1,3 @@
-//
-//  BankAccountService.swift
-//  bank
-//
-//  Created by Yulia Popova on 16/4/2022.
-//
-
 import UIKit
 import Alamofire
 
@@ -12,10 +5,23 @@ struct BankAccountService {
 
     static let shared = BankAccountService()
 
+    var bankAccounts : [BankAccountResponse] = []
+    
     struct BankAccount: Encodable {
         let currency: String
         let limit: String
         let name: String
+    }
+    
+    struct BankAccountsResponse: Decodable {
+        let accounts : [BankAccountResponse]
+    }
+    
+    struct BankAccountResponse: Decodable {
+        let id: String
+        let currency: String
+        let limit: String
+        let userID: String
     }
     
     struct Transaction: Encodable {
@@ -105,25 +111,32 @@ struct BankAccountService {
         completion(.success)
     }
     
-    func getBankAccounts(completion: @escaping (AuthResult) -> Void) {
+    mutating func getBankAccounts(completion: @escaping ([BankAccountResponse]) -> Void) {
                       
         AF.request(
             "http://bank.sytes.net:3001/v1/accounts",
             method: .get,
             headers: headers
         ).response { result in
-            debugPrint(result)
-
+            print(result.data!)
+      
+            do {
+                let response = try JSONDecoder().decode(BankAccountsResponse.self, from: result.data!)
+                completion(response.accounts)
+            
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+            }
+                        
             if result.response?.statusCode == 200 {
                 print("Success")
-                completion(.success)
+                completion([])
             } else {
                 print(result.response?.statusCode ?? 0)
-                completion(.failure(AuthError.unknownError))
+                completion([])
             }
         }
-
-        completion(.success)
+        completion([])
     }
     
     func createTransaction(accountID: String, payee: String, amount: String, completion: @escaping (AuthResult) -> Void) {
