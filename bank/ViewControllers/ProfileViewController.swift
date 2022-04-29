@@ -62,7 +62,7 @@ class ProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
-        navigationItem.title = "Провиль"
+        navigationItem.title = "Профиль"
         
         configureUI()
     }
