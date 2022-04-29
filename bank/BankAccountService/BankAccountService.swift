@@ -30,6 +30,11 @@ struct BankAccountService {
         let amount: String
     }
     
+    struct FillBalance: Encodable {
+        let accountID: String
+        let amount: String
+    }
+    
     struct Transations: Encodable {
         let start: String
         let end: String
@@ -95,6 +100,30 @@ struct BankAccountService {
         AF.request(
             "http://bank.sytes.net:3001/v1/accounts/" + accountID,
             method: .get,
+            headers: headers
+        ).response { result in
+            debugPrint(result)
+
+            if result.response?.statusCode == 200 {
+                print("Success")
+                completion(.success)
+            } else {
+                print(result.response?.statusCode ?? 0)
+                completion(.failure(AuthError.unknownError))
+            }
+        }
+
+        completion(.success)
+    }
+    
+    func fillBalance(accountID: String, count: String, completion: @escaping (AuthResult) -> Void) {
+                      
+        let balance = FillBalance(accountID: accountID, amount: count)
+        
+        AF.request(
+            "http://bank.sytes.net:3001/v1/accounts/" + accountID,
+            method: .get,
+            parameters: balance,
             headers: headers
         ).response { result in
             debugPrint(result)

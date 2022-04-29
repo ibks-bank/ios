@@ -11,14 +11,40 @@ class BankAccountViewController: UIViewController {
     
     var account : BankAccountService.BankAccountResponse? = nil
     
+    private lazy var replenishBalanceButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 15.0
+        button.setTitle("Пополнить баланс", for: .normal)
+        button.addTarget(self, action: #selector(replenishBalance), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var getTransactionsButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 15.0
+        button.setTitle("Транзакции", for: .normal)
+        button.addTarget(self, action: #selector(getTransactions), for: .touchUpInside)
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.systemBackground
-        navigationItem.title = "Профиль"
+        navigationItem.title = "Account #" + (account?.id ?? "")
         print(account)
         
         configureUI()
 //        print(account?.currency, account?.id, account.)
+    }
+    
+    @objc func replenishBalance() {
+        print("replenishBalance")
+    }
+    
+    @objc func getTransactions() {
+        print("replenishBalance")
     }
     
     private func getCurrencyImage(currency: String) -> UIImage {
@@ -92,5 +118,18 @@ class BankAccountViewController: UIViewController {
         limitLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor).isActive = true
         
         limitLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        view.addSubview(replenishBalanceButton)
+        replenishBalanceButton.translatesAutoresizingMaskIntoConstraints = false
+        replenishBalanceButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0).isActive = true
+        replenishBalanceButton.rightAnchor.constraint(equalTo: view.leftAnchor, constant: (view.frame.size.width / 2) - 5.0).isActive = true
+        replenishBalanceButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        
+        view.addSubview(getTransactionsButton)
+        getTransactionsButton.translatesAutoresizingMaskIntoConstraints = false
+        getTransactionsButton.leftAnchor.constraint(equalTo: view.rightAnchor, constant: -1 * (view.frame.size.width / 2) + 5.0).isActive = true
+        getTransactionsButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
+        getTransactionsButton.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
     }
 }

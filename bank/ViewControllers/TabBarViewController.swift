@@ -31,9 +31,9 @@ final class TabBarController: UITabBarController {
             $0.navigationBar.standardAppearance = navBarAppearance
         }
 
-        nav1.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), tag: 0)
-        nav2.tabBarItem = UITabBarItem(title: "Accounts", image: UIImage(systemName: "creditcard"), tag: 1)
-        nav3.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 2)
+        nav1.tabBarItem = UITabBarItem(title: "Профиль", image: UIImage(systemName: "person.fill"), tag: 0)
+        nav2.tabBarItem = UITabBarItem(title: "Счета", image: UIImage(systemName: "creditcard"), tag: 1)
+        nav3.tabBarItem = UITabBarItem(title: "Настройки", image: UIImage(systemName: "gearshape"), tag: 2)
 
         setViewControllers([nav1, nav2, nav3], animated: false)
     }

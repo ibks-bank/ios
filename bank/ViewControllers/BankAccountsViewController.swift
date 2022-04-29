@@ -17,6 +17,7 @@ class BankAccountsViewController: UIViewController {
         static let blurRadius = 10.0
     }
     
+    
     private lazy var logOutButton : UIBarButtonItem = {
         let button = UIBarButtonItem()
         button.title = "Выйти"
