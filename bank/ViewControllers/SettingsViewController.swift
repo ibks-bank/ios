@@ -10,7 +10,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        view.backgroundColor = UIColor.systemBackground
         navigationItem.title = "Настройки"
     }
 }

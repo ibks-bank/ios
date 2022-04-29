@@ -19,7 +19,25 @@ class BankAccountsViewController: UIViewController {
     
     private lazy var logOutButton : UIBarButtonItem = {
         let button = UIBarButtonItem()
-        button.title = "Log out"
+        button.title = "Выйти"
+        return button
+    }()
+    
+    private lazy var replenishBalanceButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 30.0
+        button.setTitle("Пополнить баланс", for: .normal)
+        button.addTarget(self, action: #selector(replenishBalance), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var getTransactionsButton : UIButton = {
+        let button = UIButton()
+        button.backgroundColor = .systemBlue
+        button.layer.cornerRadius = 30.0
+        button.setTitle("Транзакции", for: .normal)
+        button.addTarget(self, action: #selector(getTransactions), for: .touchUpInside)
         return button
     }()
     
@@ -46,7 +64,7 @@ class BankAccountsViewController: UIViewController {
             }
         }
         
-        view.backgroundColor = .white
+        view.backgroundColor = UIColor.systemBackground
         configureNavigation()
         configureInputsStackView()
         
@@ -69,6 +87,14 @@ class BankAccountsViewController: UIViewController {
         
     }
 
+    @objc func replenishBalance() {
+        print("replenishBalance")
+    }
+    
+    @objc func getTransactions() {
+        print("replenishBalance")
+    }
+    
     func configureNavigation() {
         navigationController?.hidesBarsOnSwipe = true
         navigationItem.title = AuthStrings.headerSignIn.rawValue.localized
@@ -76,10 +102,25 @@ class BankAccountsViewController: UIViewController {
     }
     
     private func configureInputsStackView() {
+        
+        view.addSubview(replenishBalanceButton)
+        replenishBalanceButton.translatesAutoresizingMaskIntoConstraints = false
+        replenishBalanceButton.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 10.0).isActive = true
+        replenishBalanceButton.rightAnchor.constraint(equalTo: view.leftAnchor, constant: (view.frame.size.width / 2) - 5.0).isActive = true
+        replenishBalanceButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0).isActive = true
+        replenishBalanceButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        
+        view.addSubview(getTransactionsButton)
+        getTransactionsButton.translatesAutoresizingMaskIntoConstraints = false
+        getTransactionsButton.leftAnchor.constraint(equalTo: view.rightAnchor, constant: -1 * (view.frame.size.width / 2) + 5.0).isActive = true
+        getTransactionsButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -10.0).isActive = true
+        getTransactionsButton.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 20.0).isActive = true
+        getTransactionsButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 80).isActive = true
+        
         view.addSubview(tableView)
         tableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         tableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        tableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        tableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 90).isActive = true
         tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         tableView.rowHeight = 40.0
     }
