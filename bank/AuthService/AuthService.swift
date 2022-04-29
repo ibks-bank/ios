@@ -18,8 +18,10 @@ struct AuthCredentials {
 
 struct AuthService {
 
-    static let shared = AuthService()
-
+    static var shared = AuthService()
+    
+    var userData : Passport? = nil
+    
     struct Login: Encodable {
         let email: String
         let password: String
@@ -31,7 +33,7 @@ struct AuthService {
         let code: String
     }
     
-    struct Passport: Encodable {
+    struct Passport: Codable {
         let series: String
         let number: String
         let firstName: String
@@ -59,22 +61,21 @@ struct AuthService {
         "Accept": "application/json"
     ]
 
-    func getData(completion: @escaping (AuthResult) -> Void) {
+    func getPassport(completion: @escaping (Passport?) -> Void) {
 
         AF.request("http://bank.sytes.net:3011/v1/passport",
                    method: .get,
                    headers: headers
-        ).response { result in
+        ).responseDecodable(of: Passport.self) { result in
             if result.response?.statusCode == 200 {
-                print("Success")
-                completion(.success)
+                completion(result.value)
             } else {
                 print(result.response?.statusCode ?? 0)
-                completion(.failure(AuthError.unknownError))
+                completion(nil)
             }
         }
 
-        completion(.success)
+        completion(nil)
     }
     
     func enterCode(email: String?, password: String?, code: String?, completion: @escaping (AuthResult) -> Void) {
