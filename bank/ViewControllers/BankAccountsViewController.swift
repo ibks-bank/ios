@@ -258,6 +258,11 @@ extension BankAccountsViewController: UITableViewDataSource, UITableViewDelegate
             var controller = NewBankAccountViewController()
             self.navigationController?.pushViewController(controller, animated: false)
             self.dismiss(animated: true, completion: nil)
+        } else {
+            var controller = BankAccountViewController()
+            controller.account = accounts[indexPath.row - 1]
+            self.navigationController?.pushViewController(controller, animated: false)
+            self.dismiss(animated: true, completion: nil)
         }
         
         tableView.deselectRow(at: indexPath, animated: true)

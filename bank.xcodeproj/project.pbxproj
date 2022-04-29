@@ -36,6 +36,7 @@
 		FB878EAC281B328700B907C1 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EAB281B328700B907C1 /* TabBarViewController.swift */; };
 		FB878EAE281B35A800B907C1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EAD281B35A800B907C1 /* SettingsViewController.swift */; };
 		FB878EB0281B35EA00B907C1 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EAF281B35EA00B907C1 /* ProfileViewController.swift */; };
+		FB878EB2281BACCE00B907C1 /* BankAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB878EB1281BACCE00B907C1 /* BankAccountViewController.swift */; };
 		FBACAF6127ED8CAA0048A95E /* BankAccountsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBACAF6027ED8CAA0048A95E /* BankAccountsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		FB878EAB281B328700B907C1 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		FB878EAD281B35A800B907C1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FB878EAF281B35EA00B907C1 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FB878EB1281BACCE00B907C1 /* BankAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountViewController.swift; sourceTree = "<group>"; };
 		FBACAF6027ED8CAA0048A95E /* BankAccountsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankAccountsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -196,6 +198,7 @@
 				FB878EAB281B328700B907C1 /* TabBarViewController.swift */,
 				FB878EAD281B35A800B907C1 /* SettingsViewController.swift */,
 				FB878EAF281B35EA00B907C1 /* ProfileViewController.swift */,
+				FB878EB1281BACCE00B907C1 /* BankAccountViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 				FB73AFD427E3CF0F0013B7E2 /* Logger.swift in Sources */,
 				FB878EA6281B231100B907C1 /* NumberButton.swift in Sources */,
 				FB878EAC281B328700B907C1 /* TabBarViewController.swift in Sources */,
+				FB878EB2281BACCE00B907C1 /* BankAccountViewController.swift in Sources */,
 				FB73AFD827E3D8920013B7E2 /* RegistrationController.swift in Sources */,
 				FB878EA0281B1F2F00B907C1 /* BankAccountService.swift in Sources */,
 				FB73AFB427E3CB7E0013B7E2 /* AppDelegate.swift in Sources */,
